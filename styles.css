@@ -84,6 +84,11 @@ section{padding:90px 6%}
 .btn-secondary{background:transparent;color:var(--text);padding:15px 38px;border-radius:50px;font-weight:500;font-size:0.95rem;text-decoration:none;border:1px solid rgba(201,168,76,0.3);cursor:pointer;transition:border-color 0.2s,transform 0.2s;font-family:var(--body);display:inline-block}
 .btn-secondary:hover{border-color:var(--accent);transform:translateY(-2px)}
 
+.contact-link{
+  text-decoration:none;
+  color:inherit;
+}
+
 /* SERVICE CARDS */
 .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px}
 .service-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:34px 28px;position:relative;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s}
