@@ -61,18 +61,26 @@
           <div class="form-group"><label>Email Address</label><input type="email" name="Email" placeholder="john@example.com" required/></div>
           <div class="form-group"><label>WhatsApp Number</label><input type="tel" name="WhatsApp" placeholder="+1 234 567 8900" required/></div>
           <div class="form-group">
-            <label>Service Needed</label>
-            <select name="Service">
-              <option value="">Select a service...</option>
-              <option>Logo Design</option>
-              <option>Graphic Design</option><option>Web Design</option>
-              <option>Motion Design</option><option>Video Editing</option>
-              <option>Print Services</option><option>Packaging Design</option>
-              <option>Branding</option><option>SEO Optimisation</option>
-              <option>Ads Management</option><option>Social Media Design</option>
-              <option>Presentation Design</option><option>Signage</option>
-              <option>Multiple Services</option><option>Other</option>
-            </select>
+           <label>Service Needed</label>
+
+<select name="Service Needed[]" multiple required class="multi-service">
+
+  <option value="Logo Design">Logo Design</option>
+  <option value="Graphic Design">Graphic Design</option>
+  <option value="Web Design">Web Design</option>
+  <option value="Motion Design">Motion Design</option>
+  <option value="Video Editing">Video Editing</option>
+  <option value="Print Services">Print Services</option>
+  <option value="Packaging Design">Packaging Design</option>
+  <option value="Branding">Branding</option>
+  <option value="SEO Optimisation">SEO Optimisation</option>
+  <option value="Ads Management">Ads Management</option>
+  <option value="Social Media Design">Social Media Design</option>
+  <option value="Presentation Design">Presentation Design</option>
+  <option value="Signage">Signage</option>
+  <option value="Multiple Services">Multiple Services</option>
+  <option value="Other">Other</option>
+</select>
           </div>
           <div class="form-group"><label>Tell Us About Your Project</label><textarea name="Message" placeholder="Describe your project, timeline and any specific requirements..." required></textarea></div>
           <button type="submit" id="pq-btn" class="btn-primary" style="width:100%;border:none;font-size:0.95rem">Send Enquiry</button>
