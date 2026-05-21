@@ -50,21 +50,21 @@
     </div>
     <div class="contact-form-box reveal reveal-delay-1">
       <div id="form-view">
-        <form id="pq-form" onsubmit="submitForm(event)">
+        <form id="pq-form">
           <input type="hidden" name="access_key" value="f8a876d0-549c-4442-a14d-cde84832d714"/>
           <input type="hidden" name="subject" value="New Enquiry — Phiaqworld Website"/>
           <input type="hidden" name="from_name" value="Phiaqworld Website"/>
           <div class="form-row">
-            <div class="form-group"><label>First Name</label><input type="text" name="First Name" placeholder="John" required/></div>
-            <div class="form-group"><label>Last Name</label><input type="text" name="Last Name" placeholder="Doe" required/></div>
+            <div class="form-group"><label>First_Name</label><input type="text" name="First_Name" placeholder="John" required/></div>
+            <div class="form-group"><label>Last Name</label><input type="text" name="Last_Name" placeholder="Doe" required/></div>
           </div>
           <div class="form-group"><label>Email Address</label><input type="email" name="Email" placeholder="john@example.com" required/></div>
-          <div class="form-group"><label>WhatsApp Number</label><input type="tel" name="WhatsApp" placeholder="+1 234 567 8900"/></div>
+          <div class="form-group"><label>WhatsApp Number</label><input type="tel" name="WhatsApp" placeholder="+1 234 567 8900" required/></div>
           <div class="form-group">
             <label>Service Needed</label>
             <select name="Service">
               <option value="">Select a service...</option>
-              <option>Graphic Design</option><option>Web Design</option>
+              <option>Logo Design</option<option>Graphic Design</option><option>Web Design</option>
               <option>Motion Design</option><option>Video Editing</option>
               <option>Print Services</option><option>Packaging Design</option>
               <option>Branding</option><option>SEO Optimisation</option>
@@ -100,19 +100,79 @@
   <p class="footer-copy">© 2026 Phiaqworld. All rights reserved.</p>
 </footer>
 <script>
-function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
-document.querySelectorAll('.reveal').forEach(function(el){new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1}).observe(el)});
-window.addEventListener('scroll',function(){document.querySelector('nav').style.padding=window.scrollY>60?'12px 6%':'16px 6%'});
-async function submitForm(e){
-  e.preventDefault();
-  var btn=document.getElementById('pq-btn');
-  btn.disabled=true;btn.textContent='Sending\u2026';
-  try{
-    var res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(document.getElementById('pq-form'))});
-    var json=await res.json();
-    if(json.success){document.getElementById('form-view').style.display='none';document.getElementById('form-success').style.display='block';}
-    else{btn.disabled=false;btn.textContent='Send Enquiry';alert('Something went wrong. Please try again.');}
-  }catch(_){btn.disabled=false;btn.textContent='Send Enquiry';alert('Network error. Please try again.');}
+
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open')
 }
+
+document.querySelectorAll('.reveal').forEach(function(el){
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting)
+        e.target.classList.add('visible')
+    })
+  },{threshold:0.1}).observe(el)
+});
+
+window.addEventListener('scroll',function(){
+  document.querySelector('nav').style.padding=
+  window.scrollY>60?'12px 6%':'16px 6%'
+});
+
+
+
+/* ========= WEB3FORM ========= */
+
+const form = document.getElementById("pq-form");
+const button = document.getElementById("pq-btn");
+
+form.addEventListener("submit", async function(e) {
+
+  e.preventDefault();
+
+  button.innerText = "Sending...";
+  button.disabled = true;
+
+  const formData = new FormData(form);
+
+  try {
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const result = await response.json();
+
+    console.log(result);
+
+    if (result.success) {
+
+      alert("Your response has been received. The great one will reach out to you on WhatsApp shortly.");
+
+      form.reset();
+
+      document.getElementById("form-view").style.display = "none";
+      document.getElementById("form-success").style.display = "block";
+
+    } else {
+
+      alert(result.message || "Something went wrong.");
+
+    }
+
+  } catch(error) {
+
+    console.log(error);
+
+    alert("Network error. Please try again.");
+
+  }
+
+  button.innerText = "Send Enquiry";
+  button.disabled = false;
+
+});
+
 </script>
 </body></html>
