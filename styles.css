@@ -38,6 +38,36 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .breadcrumb a{color:var(--muted);text-decoration:none;transition:color 0.2s}.breadcrumb a:hover{color:var(--accent)}
 .breadcrumb span{color:var(--accent)}
 
+/* CHECKBOX SELECTOR */
+.service-checkboxes{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:12px;
+  margin-top:12px;
+}
+
+.service-checkboxes label{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#f5f5f5;
+  padding:12px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s ease;
+  font-size:15px;
+}
+
+.service-checkboxes label:hover{
+  background:#e9e9e9;
+}
+
+.service-checkboxes input[type="checkbox"]{
+  width:18px;
+  height:18px;
+  cursor:pointer;
+}
+
 /* SECTIONS */
 section{padding:90px 6%}
 .section-tag{display:inline-block;background:rgba(201,168,76,0.10);border:1px solid rgba(201,168,76,0.25);color:var(--accent);font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:6px 18px;border-radius:50px;margin-bottom:16px}
