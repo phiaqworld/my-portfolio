@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Tools & Skills — Phiaqworld</title>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Phiaqworld" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+    <span class="nav-logo-text" style="display:none">Phiaqworld</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li><li><a href="tools.html" class="active">Tools</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li><li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Get a Quote</a>
+  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">&#x2715;</button>
+  <a href="index.html" onclick="toggleMenu()">Home</a><a href="about.html" onclick="toggleMenu()">About</a>
+  <a href="services.html" onclick="toggleMenu()">Services</a><a href="tools.html" onclick="toggleMenu()">Tools</a>
+  <a href="portfolio.html" onclick="toggleMenu()">Portfolio</a><a href="testimonials.html" onclick="toggleMenu()">Testimonials</a>
+  <a href="contact.html" onclick="toggleMenu()">Contact</a>
+</div>
+
+<div class="page-header">
+  <div class="page-glow"></div>
+  <div class="breadcrumb"><a href="index.html">Home</a> / <span>Tools & Skills</span></div>
+  <h1>The <em>Toolkit</em></h1>
+  <p>Industry-standard software and platforms used to deliver professional, high-quality results every single time.</p>
+</div>
+
+<section style="background:var(--bg2)">
+  <div class="section-header">
+    <div class="section-tag reveal">Design</div>
+    <h2 class="section-title reveal reveal-delay-1">Design <em>Tools</em></h2>
+  </div>
+  <div class="tools-grid">
+    <div class="tool-card reveal"><span class="tool-icon">🅿️</span><div class="tool-name">Adobe Photoshop</div><div class="tool-cat">Photo · Retouching</div></div>
+    <div class="tool-card reveal reveal-delay-1"><span class="tool-icon">🖌️</span><div class="tool-name">Adobe Illustrator</div><div class="tool-cat">Vector · Illustration</div></div>
+    <div class="tool-card reveal reveal-delay-2"><span class="tool-icon">🌀</span><div class="tool-name">CorelDRAW</div><div class="tool-cat">Vector · Print Design</div></div>
+    <div class="tool-card reveal reveal-delay-3"><span class="tool-icon">🖼️</span><div class="tool-name">Figma</div><div class="tool-cat">UI · Web Design</div></div>
+    <div class="tool-card reveal reveal-delay-1"><span class="tool-icon">🎨</span><div class="tool-name">Canva</div><div class="tool-cat">Social · Templates</div></div>
+  </div>
+</section>
+
+<section style="background:var(--bg)">
+  <div class="section-header">
+    <div class="section-tag reveal">Motion & Video</div>
+    <h2 class="section-title reveal reveal-delay-1">Motion & Video <em>Tools</em></h2>
+  </div>
+  <div class="tools-grid">
+    <div class="tool-card reveal"><span class="tool-icon">🎭</span><div class="tool-name">Adobe After Effects</div><div class="tool-cat">Motion · Animation</div></div>
+    <div class="tool-card reveal reveal-delay-1"><span class="tool-icon">✂️</span><div class="tool-name">CapCut</div><div class="tool-cat">Video · Reels Editing</div></div>
+  </div>
+</section>
+
+<section style="background:var(--bg2)">
+  <div class="section-header">
+    <div class="section-tag reveal">Productivity</div>
+    <h2 class="section-title reveal reveal-delay-1">Productivity <em>Tools</em></h2>
+  </div>
+  <div class="tools-grid">
+    <div class="tool-card reveal"><span class="tool-icon">📄</span><div class="tool-name">Microsoft Word</div><div class="tool-cat">Documents · Reports</div></div>
+    <div class="tool-card reveal reveal-delay-1"><span class="tool-icon">📊</span><div class="tool-name">Microsoft Excel</div><div class="tool-cat">Data · Spreadsheets</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo-wrap">
+    <img src="logo.png" alt="Phiaqworld" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+    <div class="footer-logo-text" style="display:none">Phiaqworld</div>
+  </div>
+  <p class="footer-tagline">Professional · Innovative · Authentic · Quality</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+    <a href="tools.html">Tools</a><a href="portfolio.html">Portfolio</a>
+    <a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a>
+  </div>
+  <p class="footer-copy">© 2026 Phiaqworld. All rights reserved.</p>
+</footer>
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+document.querySelectorAll('.reveal').forEach(function(el){new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1}).observe(el)});
+window.addEventListener('scroll',function(){document.querySelector('nav').style.padding=window.scrollY>60?'12px 6%':'16px 6%'});
+</script>
+</body></html>
